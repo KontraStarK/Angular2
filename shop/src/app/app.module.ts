@@ -1,3 +1,5 @@
+import {HttpClientModule} from '@angular/common/http';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +11,9 @@ import { MenuComponent } from './menu/menu.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { DataService } from './data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './product/product.component';
+
 
 
 @NgModule({
@@ -17,15 +22,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    MobileMenuComponent
+    MobileMenuComponent,
+    ProductsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-////ljhkjhkjhkj
+
