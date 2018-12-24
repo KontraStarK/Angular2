@@ -1,0 +1,24 @@
+<section class="slider">
+  <div class="back" 
+  (click) = "backSlide()"
+  (mouseover)="stopSlider()"
+  (mouseout)= "startSlider()"><i class="fas fa-chevron-circle-left fa-3x
+    "></i>
+  </div>
+  <div class="sliders" (mouseover)="stopSlider()" (mouseout)= "startSlider()"  >
+    <div *ngFor = "let item of masSlide" 
+         [ngClass]="{active:item==activeSlide}">
+         <img [src]="bindImg(item)" alt="img">
+         
+        </div>
+    
+  </div>
+  <div class="next"
+  (click) = "setSlide()"
+  (mouseover)="stopSlider()"
+  (mouseout)= "startSlider()"
+  
+  ><i class="fas fa-chevron-circle-right fa-3x
+  "></i>
+  </div>
+</section>

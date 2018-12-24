@@ -13,6 +13,7 @@ import { DataService } from './data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
+import { SliderComponent } from './slider/slider.component';
 
 
 
@@ -24,7 +25,8 @@ import { ProductComponent } from './product/product.component';
     MenuComponent,
     MobileMenuComponent,
     ProductsComponent,
-    ProductComponent
+    ProductComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,

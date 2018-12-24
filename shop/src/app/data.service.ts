@@ -7,7 +7,7 @@ export class DataService {
 
   constructor(private http:HttpClient) { }
   getProducts(){
-    return this.http.get('/getproduct');
+    return this.http.get('/getproducts');
     
   }
   removeProduct(item){
