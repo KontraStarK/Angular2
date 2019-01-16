@@ -14,6 +14,10 @@ app.get("/", (req, res)=> {
    res.sendFile(__dirname + "/dist/shop/index.html");
  });
 
+ app.get("/cart", (req, res)=> {
+  res.sendFile(__dirname + "/dist/shop/index.html");
+});
+
 
  app.get('/getproducts', function(req, res) {
     Product.find(function(err, data) {
