@@ -3,15 +3,14 @@
       MENU
   </article>
   <article class="mobile-menu-header-button">
-      <i *ngIf = "visible" (click) = "animateMenu()" class="fas fa-bars fa-2x open"></i>
-      <i *ngIf = "!visible" (click) = "animateMenu()" class="fas fa-times fa-2x close"></i>
+      <i *ngIf='visible' (click)='animateMenu()' class="fas fa-bars fa-2x open"></i>
+      <i *ngIf='!visible' (click)='animateMenu()' class="fas fa-times fa-2x close"></i>
   </article>
 </article>
-<article class='mobile-menu-items'[@openCloseMenu] = "state">
+<article class='mobile-menu-items' [@openCloseMenu]='state'>
   <ul>
-      <li  *ngFor = "let item of menu">
-          <a href="#">{{item}}</a>
-      </li>
+      <li *ngFor="let item of menu"><a href="#">{{item}}</a>
+    </li>
       <!-- <li><a href="#">ELEMENTS</a></li>
       <li><a href="#">PRODUCTS</a></li>
       <li><a href="#">PAGES</a></li>

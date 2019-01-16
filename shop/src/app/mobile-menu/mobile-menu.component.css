@@ -1,34 +1,33 @@
-
 .mobile-menu-header{
-   display:flex;
-   justify-content: space-between;
-   align-items: center;
-   /* background-color:orange; */
-   padding:5px 30px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color:orange; */
+  padding:5px 30px;
 }
 .mobile-menu-header-text{
-   font-size:18px;
-   font-weight:bold;
+  font-size:18px;
+  font-weight:bold;
 }
 .mobile-menu-items{
-   background-color:white;
+  background-color:white;
 }
 .mobile-menu-items ul{
-   list-style-type:none;
+  list-style-type:none;
 }
 .mobile-menu-items ul li{
-   padding:12px 30px;
-   border-bottom:1px gray solid;
+  padding:12px 30px;
+  border-bottom:1px gray solid;
 }
 .mobile-menu-items ul li:last-child{
-  border-bottom:none;
+ border-bottom:none;
 }
 .mobile-menu-items ul li a{
-   text-decoration:none;
-   color:gray;
-   font-weight:bold;
-   font-size:14px;
+  text-decoration:none;
+  color:gray;
+  font-weight:bold;
+  font-size:14px;
 }
 .mobile-menu-items ul li:hover a{
-   color:orange;
+  color:orange;
 }

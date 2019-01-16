@@ -1,32 +1,60 @@
-<article class="menu-logo">
-  <i class="fab fa-angular fa-4x"></i>
-  <span>shop</span>
-</article>
-<nav class='menu-items'>
-  <ul>
-      <li *ngFor = "let item of menu">
-        <a href="#">{{item}}</a>
-      </li>
-      <!-- <li><a href="#">Elements</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Pages</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">About As</a></li>
-      <li><a href="#">Contact</a></li> -->
-  </ul>
-</nav>
-<section class="menu-search-cart">
-<article class="menu-search">
-      <i class="fas fa-search fa-lg"></i>
-      <div>
-          <input type="text" placeholder='Search here you product...'>
-          <button>
-                  <i class="fas fa-search fa-lg"></i>
-          </button>
-      </div>
-</article>
-<article class="menu-cart">
-      <div>02</div>
-      <i class="fas fa-cart-plus fa-2x"></i>
-</article>
-</section>
+  <div class='menu' [ngClass]='{fixed:fixed}'>
+  <article class="menu-logo" routerLink=''>
+          <i class="fab fa-angular fa-4x"></i>
+          <span>shop</span>
+  </article>
+  <nav class='menu-items'>
+          <ul>
+              <li *ngFor="let item of menu">
+                      <a href="#">{{item}}</a>
+              </li>              
+          </ul>
+  </nav>
+  <section class="menu-search-cart">
+      <article class="menu-search">
+              <i class="fas fa-search fa-lg"></i>
+              <div>
+                  <input type="text" placeholder='Search here you product...'>
+                  <button>
+                          <i class="fas fa-search fa-lg"></i>
+                  </button>
+              </div>
+      </article>
+      <article class="menu-cart">
+              <div>{{cartService.viewCartCount()}}</div>
+              <i class="fas fa-cart-plus fa-2x"></i>
+              <section class="hover-cart">
+                <h3>Your Cart</h3>
+                <section class="hover-cart-products">
+                  <h2 *ngIf='!cartService.cartMas.length' class='empty'>
+                          Cart is Empty!
+                  </h2>
+                  <article class="hover-cart-product" 
+                           *ngFor='let item of cartService.cartMas.slice(0,2)'>
+                    <div class="img">
+                        <img [src]='bindImg()' alt="cart_photo">
+                        <div (click)='cartService.deleteProductCart(item)' 
+                        class="delete">X</div>
+                    </div>
+                    <div class="dummy">
+                        <h4 class='name'>{{item.model}}</h4>  
+                        <div class="brand">Brend:{{item.name}}</div>
+                        <div class='model'>Category:{{item.category}}</div> 
+                        <div class='color'>Price:{{item.price}} грн.</div> 
+                    </div>
+                  </article>
+                  
+                </section>
+                <section class="hover-cart-menu">
+                  <div>TOTAL: <span>{{cartService.sumTotal()}} грн.</span></div>
+                  <div class='view' routerLink='/cart'>CHECK VIEW</div>
+                  <div class='out'>CHECK OUT</div>
+                </section>
+              </section>
+      </article>
+      
+
+  </section>
+  </div>
+
+  

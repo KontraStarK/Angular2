@@ -1,24 +1,69 @@
-<section class="slider">
-  <div class="back" 
-  (click) = "backSlide()"
-  (mouseover)="stopSlider()"
-  (mouseout)= "startSlider()"><i class="fas fa-chevron-circle-left fa-3x
-    "></i>
+<!-- <section class="slider">
+  <div class="back" (click)='backSlide()' (mouseover)='stopSlider()' (mouseout)='startSlider()'>
+    <i class="fas fa-chevron-circle-left fa-3x"></i>
   </div>
-  <div class="sliders" (mouseover)="stopSlider()" (mouseout)= "startSlider()"  >
-    <div *ngFor = "let item of masSlide" 
-         [ngClass]="{active:item==activeSlide}">
-         <img [src]="bindImg(item)" alt="img">
-         
+  <div class="slides" (mouseover)='stopSlider()' (mouseout)='startSlider()'>
+    <div *ngFor='let item of masSlide' [ngClass]="{active:item==activeSlide}">
+        <img [src]="bindImg(item)" alt="slides_img">
+    </div>
+  </div>
+  <div class="next" (click)='setSlide()' (mouseover)='stopSlider()' (mouseout)='startSlider()'>
+      <i class="fas fa-chevron-circle-right fa-3x"></i>
+  </div>
+</section> -->
+
+<!-- <section class="slider">
+  <div class="back" >
+    <i class="fas fa-chevron-circle-left fa-3x"></i>
+  </div>
+  <div class="slides" >
+    <div *ngFor='let item of masSlide' [ngClass]="{active:item==activeSlide,trans:setTrans(item)}" [style.left]='setLeft(item)'>
+        <img [src]="bindImg(item)" alt="slides_img">
+    </div>
+  </div>
+  <div class="next" (click)='setNextSlide()' >
+      <i class="fas fa-chevron-circle-right fa-3x"></i>
+  </div>
+</section> -->
+
+
+
+<div class="sliders">
+  <div class='back'>
+    <i class="fas fa-chevron-circle-left fa-3x"
+      (click)='setNextSlide()'
+      (mouseover)='stopSlider()'
+      (mouseout)='startSlider()'></i>
+  </div>
+  <div class="slides" (mouseover)='stopSlider()'(mouseout)='startSlider()'>
+    <div *ngFor='let item of masSlide'
+      [ngClass]='{active:item==activeSlide,trans:setTrans(item),slide:true}'
+      [style.left]='setLeft(item)'>
+    <div class="img">
+      <img [src]='bindImg(item)' alt="slider_img">
+    </div>
+    <div class="content">
+      <div class="subcontent">
+        <div class="header">
+          WATERPROOF SMARTPHONE {{item}}
         </div>
-    
+        <div class="text">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam officia voluptatibus, hic nostrum expedita alias vel culpa porro quae. Corporis expedita illo quasi ea est!
+        </div>
+        <button class="buy-now">BUY NOW</button>
+      </div>
+    </div>
   </div>
-  <div class="next"
-  (click) = "setSlide()"
-  (mouseover)="stopSlider()"
-  (mouseout)= "startSlider()"
-  
-  ><i class="fas fa-chevron-circle-right fa-3x
-  "></i>
+  <section class='checks'>
+    <article *ngFor='let item of masSlide' [ngClass]='{check:true,select:item==nextSlide}'></article>
+  </section>
   </div>
-</section>
+  <div class="next">
+    <i class="fas fa-chevron-circle-right fa-3x"
+    (click)='setBackSlide()'
+    (mouseover)='stopSlider()'
+    (mouseout)='startSlider()'></i>
+  </div>
+</div>
+
+
